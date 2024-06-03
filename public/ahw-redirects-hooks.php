@@ -3,7 +3,7 @@ add_filter(
     "ahw_post_not_found_post_data",
     function ($post_id, $permalink) {
         if (!$post_id) {
-            $redirect = ApiRedirect::maybe_get_redirect($permalink);
+            $redirect = Akka_headless_wp_redirects::maybe_get_redirect($permalink);
             if ($redirect) {
                 return $redirect;
             }
