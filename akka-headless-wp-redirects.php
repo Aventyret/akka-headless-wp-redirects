@@ -23,4 +23,5 @@ define('AKKA_HEADLESS_WP_REDIRECTS_URI', plugin_dir_url( __FILE__ ));
 define('AKKA_HEADLESS_WP_REDIRECTS_VER', "0.3.9");
 
 require_once(AKKA_HEADLESS_WP_REDIRECTS_DIR . 'includes/ahw-redirects.php');
+require_once(AKKA_HEADLESS_WP_REDIRECTS_DIR . 'includes/ahw-redirects-acf-fields.php');
 require_once(AKKA_HEADLESS_WP_REDIRECTS_DIR . 'public/ahw-redirects-hooks.php');
