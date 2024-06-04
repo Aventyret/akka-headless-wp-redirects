@@ -2,12 +2,12 @@
 add_action("acf/init", function () {
     acf_add_options_page([
         "page_title" => __("Redirects", "akka-redirects"),
-        "menu_title" => __("Redirects", "akka-redirects"),
+        "menu" => __("Redirects", "akka-redirects"),
         "menu_slug" => "global-redirects",
         "post_id" => "global",
-        "redirect" => false,
-        "icon_url" => "dashicons-move",
         "position" => 60,
+        "capability" => "edit_posts",
+        "parent" => "options-general.php",
     ]);
 
     $redirects_fields = apply_filters("ahw_redirects_acf_fields", []);
