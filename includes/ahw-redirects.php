@@ -21,7 +21,8 @@ class Akka_headless_wp_redirects {
                     foreach ($_GET as $query_name => $query_value) {
                         if (
                             !isset($source_parameters[$query_name]) &&
-                            $query_name != "lang"
+                            $query_name != "lang" &&
+                            $query_name != "permalink"
                         ) {
                             $target_parameters_strings[] =
                                 $query_name . "=" . $query_value;
