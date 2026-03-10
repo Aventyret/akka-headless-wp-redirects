@@ -57,6 +57,9 @@ class Akka_headless_wp_redirects {
             ["", ""],
             $source_path
         );
+        if (strlen($source_path) > 1) {
+            $source_path = rtrim($source_path, '/');
+        }
         return strtolower($source_path) == "/" . strtolower($permalink);
     }
 
