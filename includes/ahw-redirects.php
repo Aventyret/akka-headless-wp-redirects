@@ -50,7 +50,9 @@ class Akka_headless_wp_redirects {
     private static function match_redirect_path($redirect, $permalink)
     {
         $source = apply_filters("ahw_redirects_redirect_source", $redirect["source"], $redirect);
-        $source_path = array_shift(explode("?", $source));
+        $source_path_parts = explode("?", $source);
+        $source_path = array_shift($source_path_parts);
+
 
         $source_path = str_replace(
             [WP_HOME, AKKA_FRONTEND_BASE],
