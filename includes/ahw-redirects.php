@@ -1,11 +1,9 @@
 <?php
-use \Akka_headless_wp_utils as Utils;
-use \Akka_headless_wp_resolvers as Resolvers;
 
 class Akka_headless_wp_redirects {
     public static function maybe_get_redirect($permalink)
     {
-        $redirects = Resolvers::resolve_global_field("redirects");
+        $redirects = \Akka\Resolvers::resolve_global_field("redirects");
         $redirect_match = null;
         foreach ($redirects as $redirect) {
             if (
@@ -36,7 +34,7 @@ class Akka_headless_wp_redirects {
                             implode("&", $target_parameters_strings);
                     }
                 }
-                $redirect_url = Utils::parseUrl($redirect_target);
+                $redirect_url = \Akka\Utils::parse_url($redirect_target);
                 $redirect_url = apply_filters("ahw_redirects_redirect_url", $redirect_url, $redirect);
                 return [
                     "post_type" => "redirect",
