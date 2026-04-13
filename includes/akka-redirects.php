@@ -4,7 +4,7 @@ namespace Akka;
 class Redirects {
     public static function maybe_get_redirect($permalink)
     {
-        $redirects = \Akka\Resolvers::resolve_global_field("redirects");
+        $redirects = Resolvers::resolve_global_field("redirects");
         $redirect_match = null;
         foreach ($redirects as $redirect) {
             if (
@@ -35,7 +35,7 @@ class Redirects {
                             implode("&", $target_parameters_strings);
                     }
                 }
-                $redirect_url = \Akka\Utils::parse_url($redirect_target);
+                $redirect_url = Utils::parse_url($redirect_target);
                 $redirect_url = apply_filters("akka_redirects_redirect_url", $redirect_url, $redirect);
                 return [
                     "post_type" => "redirect",
