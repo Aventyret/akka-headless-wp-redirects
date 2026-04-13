@@ -1,6 +1,7 @@
 <?php
+namespace Akka;
 
-class Akka_headless_wp_redirects {
+class Redirects {
     public static function maybe_get_redirect($permalink)
     {
         $redirects = \Akka\Resolvers::resolve_global_field("redirects");
@@ -35,7 +36,7 @@ class Akka_headless_wp_redirects {
                     }
                 }
                 $redirect_url = \Akka\Utils::parse_url($redirect_target);
-                $redirect_url = apply_filters("ahw_redirects_redirect_url", $redirect_url, $redirect);
+                $redirect_url = apply_filters("akka_redirects_redirect_url", $redirect_url, $redirect);
                 return [
                     "post_type" => "redirect",
                     "redirect" => $redirect_url,
@@ -47,7 +48,7 @@ class Akka_headless_wp_redirects {
 
     private static function match_redirect_path($redirect, $permalink)
     {
-        $source = apply_filters("ahw_redirects_redirect_source", $redirect["source"], $redirect);
+        $source = apply_filters("akka_redirects_redirect_source", $redirect["source"], $redirect);
         $source_path_parts = explode("?", $source);
         $source_path = array_shift($source_path_parts);
 
