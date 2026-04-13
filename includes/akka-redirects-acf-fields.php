@@ -10,7 +10,7 @@ add_action("acf/init", function () {
         "parent" => "options-general.php",
     ]);
 
-    $redirects_fields = apply_filters("ahw_redirects_acf_fields", []);
+    $redirects_fields = apply_filters("akka_redirects_acf_fields", []);
 
     acf_add_local_field_group([
         "key" => "group_global_redirects",
