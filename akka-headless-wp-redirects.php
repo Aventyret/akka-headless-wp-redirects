@@ -5,7 +5,7 @@ Plugin URI: https://github.com/aventyret/akka-wp/blob/main/plugins/akka-headless
 Description: Redirects plugin for Akka
 Author: Mediakooperativet, Äventyret
 Author URI: https://aventyret.com
-Version: 0.3.9
+Version: 2.0.0
 */
 
 if (basename($_SERVER['PHP_SELF']) == basename(__FILE__)){
@@ -20,7 +20,7 @@ if (defined('AKKA_HEADLESS_WP_REDIRECTS'))
 define('AKKA_HEADLESS_WP_REDIRECTS',  __FILE__ );
 define('AKKA_HEADLESS_WP_REDIRECTS_DIR', plugin_dir_path( __FILE__ ));
 define('AKKA_HEADLESS_WP_REDIRECTS_URI', plugin_dir_url( __FILE__ ));
-define('AKKA_HEADLESS_WP_REDIRECTS_VER', "0.3.9");
+define('AKKA_HEADLESS_WP_REDIRECTS_VER', "2.0.0");
 
 require_once(AKKA_HEADLESS_WP_REDIRECTS_DIR . 'includes/akka-redirects.php');
 require_once(AKKA_HEADLESS_WP_REDIRECTS_DIR . 'includes/akka-redirects-acf-fields.php');
