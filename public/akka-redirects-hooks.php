@@ -1,13 +1,13 @@
 <?php
 add_filter(
     "akka_post_not_found_response",
-    function ($permalink) {
+    function ($response, $permalink) {
         $redirect = \Akka\Redirects::maybe_get_redirect($permalink);
         if ($redirect) {
             return $redirect;
         }
-        return $permalink;
+        return $response;
     },
     10,
-    1
+    2
 );
